@@ -18,7 +18,11 @@ const Content = (props) => {
 }
 
 const Total = (props) => {
-  <p>Number of exercises {props.Total}</p>
+  return (
+    <>
+      <p>Number of exercises {props.Total}</p>
+    </>
+  )
 }
 
 const App = () => {
