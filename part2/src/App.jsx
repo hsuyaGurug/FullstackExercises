@@ -27,8 +27,7 @@ const Header = ({ name }) => {
 }
 
 const Total = ({ parts }) => {
-  let total = 0;
-  parts.forEach(part => { total += part.exercises })
+  let total = parts.reduce((final, current) => final + current.exercises, 0)
   return (
     <p>Total of {total} exercises</p>
   )
