@@ -10,15 +10,19 @@ const StatisticsLine = ({ text, value }) => {
 const Statistics = ({ good, bad, neutral }) => {
   if (good + bad + neutral != 0) {
     return (
-      <>
-        <h2>Statistics</h2>
-        <StatisticsLine text="good" value={good} />
-        <StatisticsLine text="bad" value={bad} />
-        <StatisticsLine text="neutral" value={neutral} />
-        <StatisticsLine text="all" value={good + neutral + bad} />
-        <StatisticsLine text="average" value={(good - bad) / (good + neutral + bad)} />
-        <StatisticsLine text="Positive" value={good / (good + neutral + bad)} />
-      </>
+      <table>
+        <th>
+          <tr><h2>Statistics</h2></tr>
+        </th>
+        <tbody>
+          <tr><StatisticsLine text="good" value={good} /> </tr>
+          <tr><StatisticsLine text="bad" value={bad} /></tr>
+          <tr><StatisticsLine text="neutral" value={neutral} /></tr>
+          <tr> <StatisticsLine text="all" value={good + neutral + bad} /></tr>
+          <tr><StatisticsLine text="average" value={(good - bad) / (good + neutral + bad)} /></tr>
+          <tr><StatisticsLine text="Positive" value={good / (good + neutral + bad)} /></tr>
+        </tbody>
+      </table>
     )
   }
   else {
