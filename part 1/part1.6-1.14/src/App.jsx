@@ -3,17 +3,25 @@ import './App.css'
 import Button from './Button'
 
 const Statistics = ({ good, bad, neutral }) => {
-  return (
-    <>
-      <h2>Statistics</h2>
-      <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
-      <p>all {good + neutral + bad}</p>
-      <p>Average {(good - bad) / (good + neutral + bad)}</p>
-      <p>Positive {good / (good + neutral + bad)}</p>
-    </>
-  )
+  if (good != 0 && bad != 0 && neutral != 0) {
+    return (
+
+      <>
+        <h2>Statistics</h2>
+        <p>good {good}</p>
+        <p>neutral {neutral}</p>
+        <p>bad {bad}</p>
+        <p>all {good + neutral + bad}</p>
+        <p>Average {(good - bad) / (good + neutral + bad)}</p>
+        <p>Positive {good / (good + neutral + bad)}</p>
+      </>
+    )
+  }
+  else {
+    return (
+      <p>No feedback given</p>
+    )
+  }
 }
 
 function App() {
@@ -31,5 +39,4 @@ function App() {
     </>
   )
 }
-12
 export default App
