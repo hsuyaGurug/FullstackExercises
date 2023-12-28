@@ -1,5 +1,5 @@
 import './App.css'
-
+import Course from './Course'
 
 const Part = ({ part }) => {
   return (
@@ -32,24 +32,7 @@ const Total = ({ parts }) => {
     <p>Total of {total} exercises</p>
   )
 }
-const Course = ({ courses }) => {
-  return (
-    <>
-      {
-        courses.map(course =>
-          <div>
-            <Header name={course.name} />
-            <div>
-              <Content parts={course.parts} />
-            </div>
-            <Total parts={course.parts} />
-          </div>
-        )
-      }
-    </>
 
-  )
-}
 
 const App = () => {
   const courses = [
